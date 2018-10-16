@@ -135,7 +135,11 @@ export default class MolecularProfileSelector extends QueryStoreComponent<{}, {}
 		if (groupIsSelected && molecularAlterationType == 'MRNA_EXPRESSION')
 		{
 			output.push(
-				<div key={output.length} className={styles.zScore}>
+                            <div key={output.length} className={styles.zScore}>
+                                <div>
+                                    <input type="checkbox"/> Use z-scores
+                                </div>
+				<div>
 					Enter a z-score threshold <span dangerouslySetInnerHTML={{ __html:['&','plusmn;'].join('') }} />
 					<input
 						type="text"
@@ -145,6 +149,7 @@ export default class MolecularProfileSelector extends QueryStoreComponent<{}, {}
 						}}
 					/>
 				</div>
+                            </div>
 			);
 		}
 

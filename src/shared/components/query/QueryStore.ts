@@ -362,7 +362,7 @@ export class QueryStore
 		// query tab only allows selecting profiles with showProfileInAnalysisTab=true
 		return selectedIds.filter(id => {
 			let profile = this.dict_molecularProfileId_molecularProfile[id];
-			return profile && profile.showProfileInAnalysisTab;
+			return profile;// && profile.showProfileInAnalysisTab;
 		});
 	}
 	set selectedProfileIds(value)
@@ -925,7 +925,7 @@ export class QueryStore
 			if (profile.molecularAlterationType != molecularAlterationType)
 				return false;
 
-			return profile.showProfileInAnalysisTab || this.forDownloadTab;
+			return true; //profile.showProfileInAnalysisTab || this.forDownloadTab;
 		});
 	}
 
